@@ -27,7 +27,7 @@ export class ChallengeImportRunner extends CommandRunner {
       const challenges = await this.syncChallengesFromFile(file);
       filesSynced++;
       console.info(
-        `[challenge-import]: ${filesSynced}/${files.length} synced. Challenges added=${challenges.length}`,
+        `[challenge-import] :${file.path}: ${filesSynced}/${files.length} synced. Challenges added = ${challenges.length}`,
       );
     }
   }

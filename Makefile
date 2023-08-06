@@ -12,6 +12,12 @@ run-dev-db:
 run-seed-codesources:
 	yarn --cwd ./packages/back-nest command seed-challenges
 
+run-import-challenges:
+	yarn --cwd ./packages/back-nest command import-projects
+	yarn --cwd ./packages/back-nest command sync-projects
+	yarn --cwd ./packages/back-nest command import-files
+	yarn --cwd ./packages/back-nest command import-challenges
+
 # webapp
 
 install-webapp-dependencies:

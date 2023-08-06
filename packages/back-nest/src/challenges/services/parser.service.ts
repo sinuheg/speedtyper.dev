@@ -25,10 +25,10 @@ export enum NodeTypes {
 }
 
 export class Parser {
-  private MAX_NODE_LENGTH = 300;
-  private MIN_NODE_LENGTH = 100;
-  private MAX_NUM_LINES = 11;
-  private MAX_LINE_LENGTH = 55;
+  private MAX_NODE_LENGTH = 10000;
+  private MIN_NODE_LENGTH = 1;
+  private MAX_NUM_LINES = 500;
+  private MAX_LINE_LENGTH = 500;
 
   constructor(private ts: TSParser) {}
 
@@ -62,7 +62,6 @@ export class Parser {
         // We want method declarations if they are on the root node (i.e. golang)
         return true;
       default:
-        console.log(node.type);
         return false;
     }
   }

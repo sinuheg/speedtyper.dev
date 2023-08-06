@@ -17,12 +17,9 @@ export class UnsyncedFileImportRunner extends CommandRunner {
   async run(): Promise<void> {
     const projects = await this.projectService.findAll();
     for (const project of projects) {
-      // Only sync unsynced projects for now
-      if (!project.syncedSha) {
-        const sha = await this.importer.import(project);
-        await this.projectService.updateSyncedSha(project.id, sha);
-        console.info(`[FileImport]: Imported files for ${project.fullName}`);
-      }
+      // Always sync
+      await this.importer.import(project);
+      console.info(`[FileImport]: Imported files for ${project.fullName}`);
     }
   }
 }

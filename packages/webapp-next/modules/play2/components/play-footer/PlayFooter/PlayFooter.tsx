@@ -114,7 +114,7 @@ export function PlayFooter({ challenge }: PlayFooterProps) {
         >
           {!isPlaying && (
             <div className="w-full">
-              <div className="flex row justify-between items-top">
+              <div className="flex row justify-end items-top">
                 <ActionButtons />
                 <div className="text-faded-gray flex gap-4">
                   {isAnonymous && (
